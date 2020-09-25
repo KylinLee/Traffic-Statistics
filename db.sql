@@ -6,9 +6,9 @@ create table visitor(
     visit_time datetime,
     sex tinyint,
     temperature char(4)
-)
+);
 
 create table blacklist(
     id char(8),
     name varchar(20)
-)
+);

@@ -1,6 +1,7 @@
 const Koa = require("koa")
 const Router = require("koa-router")
 const bodyParser = require("koa-bodyparser")
+const static = require("koa-static")
 
 const router = new Router()
 const app = new Koa();
@@ -8,7 +9,13 @@ const db = require("./db")
 
 app.use(bodyParser())
 
-router.get("/", async (ctx) => {
+router.get("/", async () => {
+    app.use(static(".", {
+        index: "index.html"
+    }))
+})
+
+router.get("/count", async (ctx) => {
     const count = await db.getCount()
     ctx.response.body = {
         "status": true,
@@ -51,6 +58,6 @@ router.post("/visit", async (ctx) => {
 
 app.use(router.routes()).use(router.allowedMethods())
 
-app.listen(4000, () => {
-    console.log("请打开 localhost:4000")
+app.listen(8888, () => {
+    console.log("请打开 localhost:8888")
 });
