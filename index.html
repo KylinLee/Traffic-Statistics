@@ -1,150 +1,175 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
+		<title>人员统计</title>
+		<style type="text/css">
+			@charset "UTF-8";
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="maximum-scale=1.0,initial-scale=1.0,user-scalable=no" />
-    <title>人员统计</title>
-    <style>
-        @charset "UTF-8";
+			body {
+				background-size: 200%;
+				text-align: center;
+				background-image: linear-gradient(rgb(41, 163, 233) 10%, #f5f5f5 40%);
+				background-repeat: repeat-x;
+				height: 100vh;
+			}
 
-        body {
-            background-size: 200%;
-            text-align: center;
-            background-image: linear-gradient(rgb(41, 163, 233) 10%, #f5f5f5 40%);
-            background-repeat: repeat-x;
-            height: 100vh;
-        }
+			html,
+			body {
+				max-width: 100%;
+				overflow-x: hidden;
+				overflow-y: hidden;
+			}
 
-        html,
-        body {
-            max-width: 100%;
-            overflow-x: hidden;
-            overflow-y: hidden;
-        }
+			.banner {
+				font-size: 170%;
+				line-height: 100px;
+				color: rgb(41, 163, 233);
+				padding: 4.2rem 0 5.7rem;
+				text-align: center;
+			}
 
-        .banner {
-            font-size: 170%;
-            line-height: 100px;
-            color: rgb(41, 163, 233);
-            padding: 4.2rem 0 5.7rem;
-            text-align: center;
-        }
+			div {
+				color: rgb(41, 163, 233);
+				line-height: 65px;
+				font-weight: 700;
+			}
 
-        div {
-            color: rgb(41, 163, 233);
-            line-height: 65px;
-            font-weight: 700;
-        }
+			footer {
+				font-size: 14px;
+				text-align: center;
+				color: rgb(20, 59, 117);
+				position: absolute;
+				bottom: 0;
+				width: 100%;
+			}
 
-        footer {
-            font-size: 14px;
-            text-align: center;
-            color: rgb(20, 59, 117);
-            position: absolute;
-            bottom: 0;
-            width: 100%;
-        }
+			input {
+				box-sizing: border-box;
+				border: 1px solid #ddd;
+				color: rgb(41, 163, 233);
+				font-size: 16px;
+				padding: 10px;
+				vertical-align: middle;
+				border-radius: 10px;
+				width: 275px;
+				height: 45px;
+				outline: none;
+			}
 
-        input {
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            color: rgb(41, 163, 233);
-            font-size: 16px;
-            padding: 10px;
-            vertical-align: middle;
-            border-radius: 10px;
-            width: 275px;
-            height: 45px;
-            outline: none;
-        }
+			select {
+				box-sizing: border-box;
+				border: 1px solid #ddd;
+				color: rgb(105, 153, 243);
+				font-size: 16px;
+				padding: 8px;
+				vertical-align: middle;
+				border-radius: 10px;
+				width: 275px;
+				height: 45px;
+				outline: none;
+			}
 
-        select {
-            box-sizing: border-box;
-            border: 1px solid #ddd;
-            color: rgb(105, 153, 243);
-            font-size: 16px;
-            padding: 8px;
-            vertical-align: middle;
-            border-radius: 10px;
-            width: 275px;
-            height: 45px;
-            outline: none;
-        }
+			.blue-button {
+				font-size: 18px;
+				font-weight: 700;
+				color: rgb(255, 255, 255);
+				border-radius: 10px;
+				background-color: rgb(41, 163, 233);
+				border-color: rgb(41, 163, 233);
+				padding: 6px 60px;
+				width: 265px;
+				height: 45px;
+			}
 
-        .blue-button {
-            font-size: 18px;
-            font-weight: 700;
-            color: rgb(255, 255, 255);
-            border-radius: 10px;
-            background-color: rgb(41, 163, 233);
-            border-color: rgb(41, 163, 233);
-            padding: 6px 60px;
-            width: 265px;
-            height: 45px;
-        }
+			.blue-button:hover {
+				font-size: 18px;
+				font-weight: 700;
+				color: rgb(255, 255, 255);
+				border-radius: 10px;
+				background-color: rgb(41, 102, 233);
+				border-color: rgb(41, 102, 233);
+				padding: 6px 60px;
+				width: 265px;
+				height: 45px;
+			}
 
-        .blue-button:hover {
-            font-size: 18px;
-            font-weight: 700;
-            color: rgb(255, 255, 255);
-            border-radius: 10px;
-            background-color: rgb(41, 102, 233);
-            border-color: rgb(41, 102, 233);
-            padding: 6px 60px;
-            width: 265px;
-            height: 45px;
-        }
+			#button {
+				line-height: 60px;
+				margin: 2em;
+				letter-spacing: 1px;
+			}
 
-        #button {
-            line-height: 60px;
-            margin: 2em;
-            letter-spacing: 1px;
-        }
+			#box {
+				background-color: rgb(255, 255, 255);
+				/*width: 90%;*/
+				/*line-height: 594%;*/
+				/*margin: auto;*/
+				border-radius: 28px;
+				margin: 5rem 1rem 8.3rem;
+				position: relative;
+				/*overflow: hidden;*/
+				text-align: center;
+				overflow-x: hidden;
+				overflow-y: auto;
+				min-height: 70%;
+				box-shadow: 5px 5px 5px rgb(151, 151, 151);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box">
+			<strong class="banner">创新实验室参观人员登记</strong>
+			<form action="#">
+				<div><label><input id="uid" type="number" required="true" name="学号" oninput="if(value.length>8)value=value.slice(0,8)"
+						 placeholder="请输入学号"></label></div>
+				<div><label><input id="uname" type="text" required="true" name="姓名" placeholder="请输入姓名"></label></div>
+				<div>
+					<select id="usex">
+						<span>
+							<option style="display:none">下拉选择性别</option>
+						</span>
+						<option value="0">男</option>
+						<option value="1">女</option>
+					</select>
+				</div>
+				<div><label><input id='utemperature' type="number" required="true" name="体表温度" oninput="if(value.length>5)value=value.slice(0,5)"
+						 placeholder="请输入实时体表温度"></label></div>
+				<div id="button">
+					<input class="blue-button" name="提交" value="提交信息 " onclick="http();return false;">
+					<input class="blue-button" type="reset" name="重置" value="重新填写">
+				</div>
+			</form>
+		</div>
+		<footer><strong>安力群创新实验室</strong></footer>
+		<script>
+			function http() {
+				const url = 'http://139.196.214.95:8888/visit'
 
-        #box {
-            background-color: rgb(255, 255, 255);
-            /*width: 90%;*/
-            /*line-height: 594%;*/
-            /*margin: auto;*/
-            border-radius: 28px;
-            margin: 5rem 1rem 8.3rem;
-            position: relative;
-            /*overflow: hidden;*/
-            text-align: center;
-            overflow-x: hidden;
-            overflow-y: auto;
-            min-height: 70%;
-            box-shadow: 5px 5px 5px rgb(151, 151, 151);
-        }
-    </style>
-</head>
 
-<body>
-    <div id="box">
-        <strong class="banner">创新实验室参观人员登记</strong>
-        <form action="#">
-            <div><label><input type="number" required="true" name="学号"
-                        oninput="if(value.length>8)value=value.slice(0,8)" placeholder="请输入学号"></label></div>
-            <div><label><input type="text" required="true" name="姓名" placeholder="请输入姓名"></label></div>
-            <div>
-                <select>
-                    <span>
-                        <option style="display:none">下拉选择性别</option>
-                    </span>
-                    <option>男</option>
-                    <option>女</option>
-                </select>
-            </div>
-            <div><label><input type="number" required="true" name="体表温度"
-                        oninput="if(value.length>5)value=value.slice(0,5)" placeholder="请输入实时体表温度"></label></div>
-            <div id="button">
-                <input class="blue-button" type="submit" name="提交" value="提交信息">
-                <input class="blue-button" type="reset" name="重置" value="重新填写">
-            </div>
-        </form>
-    </div>
-    <footer><strong>安力群创新实验室</strong></footer>
-</body>
+				const data = {
+					id: document.getElementById('uid').value.toString(),
+					name: document.getElementById('uname').value,
+					sex: Number(document.getElementById('usex').value),
+					temperature: document.getElementById('utemperature').value.toString()
+				}
 
+				console.log(data)
+
+				const result = postData(url, data)
+
+				console.log(result)
+
+			}
+
+			function postData(url, data) {
+				return fetch(url, {
+						body: data,
+						method: 'POST'
+					})
+					.then(response => response.json())
+			}
+		</script>
+	</body>
 </html>
